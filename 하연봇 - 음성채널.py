@@ -1,4 +1,5 @@
 import discord
+import os
 from discord.ext import commands
 from youtube_dl import YoutubeDL
 import bs4
@@ -146,5 +147,6 @@ async def 멜론(ctx):
         vc.play(FFmpegPCMAudio(URL, **FFMPEG_OPTIONS))
     else:
         await ctx.send("이미 노래가 재생 중이라 노래를 재생할 수 없어요!")
-    
-bot.run('ODcxNzMxNjc4ODA3MjAzODgw.YQflZA.hGP0cb5081GxorpI9fyNWNNy2UE')
+        
+access_token = os.environ["BOT_TOKEN"]    
+bot.run(access_token)
